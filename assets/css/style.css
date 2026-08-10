@@ -1,0 +1,254 @@
+/* Altri Pianeti — estetica anni '90: calda, sbiadita, da diario */
+
+:root {
+  --cream: #f3ecdf;
+  --ink: #2c2620;
+  --ink-soft: #55493d;
+  --dusty-pink: #c98f8a;
+  --faded-lilac: #a89bc4;
+  --olive: #7b7a4c;
+  --line: #d8cdb8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* leggera grana da pellicola, fissa su tutta la pagina */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+a { color: inherit; }
+
+.site-header {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.site-title {
+  display: inline-block;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.site-tagline {
+  margin: 0.5rem 0 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* --- header-extra: menu tag + canzone in vetrina --- */
+
+.header-extra {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tag {
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.tag:hover {
+  border-color: var(--dusty-pink);
+  color: var(--ink);
+}
+
+.tag.is-active {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: var(--cream);
+}
+
+/* --- muro dei contenuti --- */
+
+.wall {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.post:first-child {
+  padding-top: 0;
+}
+
+.post-time {
+  display: inline-block;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: var(--dusty-pink);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.post-time:hover {
+  color: var(--olive);
+}
+
+.post-media {
+  margin: 1rem 0;
+}
+
+.post-media img,
+.post-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.post-embed iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+}
+
+.post-embed-audio iframe {
+  aspect-ratio: auto;
+  height: 152px;
+}
+
+/* --- canzone in vetrina (nell'header, sopra il muro) --- */
+
+.featured-track {
+  max-width: 360px;
+  margin: 1.5rem auto 0;
+}
+
+.tag-filter + .featured-track {
+  margin-top: 1.75rem;
+}
+
+.featured-track-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0 0 0.6rem;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.featured-track-note {
+  color: var(--dusty-pink);
+}
+
+.featured-track-embed iframe {
+  width: 100%;
+  height: 80px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.post-body {
+  color: var(--ink);
+}
+
+.post-body p:first-child {
+  margin-top: 0;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.post-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.post-tags .tag {
+  font-size: 0.7rem;
+  color: var(--faded-lilac);
+  border-color: var(--faded-lilac);
+}
+
+.post-tags .tag:hover {
+  color: var(--ink);
+  border-color: var(--dusty-pink);
+}
+
+.empty {
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 3rem 0;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.25rem 3rem;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 480px) {
+  body { font-size: 17px; }
+  .site-header { padding: 2.5rem 1rem 1.25rem; }
+  .post { padding: 2rem 0; }
+}

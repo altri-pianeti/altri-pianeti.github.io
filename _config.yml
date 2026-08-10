@@ -1,0 +1,25 @@
+title: "Altri Pianeti"
+description: "diario per immagini, suoni e parole"
+url: "https://altri-pianeti.github.io"
+lang: it
+
+# Permalink coerente con lo stile già usato su mariogaio.github.io
+permalink: /post/:year-:month-:day-:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - SETUP.md
+  - GUIDA-SARA.md
+  - node_modules
+  - vendor

@@ -1,0 +1,46 @@
+# --------------------------------------------------------------------------
+# base_url va completato quando il proxy OAuth (Cloudflare Worker) è online
+# --------------------------------------------------------------------------
+backend:
+  name: github
+  repo: altri-pianeti/altri-pianeti.github.io
+  branch: main
+  base_url: https://TUO-PROXY-OAUTH.example.workers.dev
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "posts"
+    label: "Post"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    format: "frontmatter"
+    sortable_fields: ["date"]
+    view_filters:
+      - label: "Con video"
+        field: video_embed
+        pattern: ".+"
+    fields:
+      - { label: "Data e ora di pubblicazione", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z", picker_utc: false }
+      - { label: "Tag", name: "tags", widget: "list", default: [], required: false, hint: "Scrivi una parola e premi invio per aggiungerla" }
+      - { label: "Testo", name: "body", widget: "markdown", required: false }
+      - { label: "Immagine o gif", name: "image", widget: "image", required: false }
+      - { label: "Video — carica un file", name: "video_file", widget: "file", required: false }
+      - { label: "Video — link (YouTube o Vimeo)", name: "video_embed", widget: "string", required: false }
+
+  - name: "impostazioni"
+    label: "Impostazioni"
+    files:
+      - file: "_data/player.yml"
+        label: "Canzone in vetrina"
+        name: "player"
+        description: "Il brano che compare fisso in cima al sito, sotto il menù dei tag. Lascia il link vuoto per non mostrare nessun player."
+        fields:
+          - { label: "Link (Spotify o SoundCloud)", name: "embed_url", widget: "string", required: false }
+          - { label: "Titolo del brano", name: "title", widget: "string", required: false }
+          - { label: "Artista", name: "artist", widget: "string", required: false }

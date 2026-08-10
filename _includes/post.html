@@ -1,0 +1,46 @@
+<article class="post" data-tags="{{ post.tags | join: ',' | downcase }}">
+  <a class="post-time" href="{{ post.url | relative_url }}">
+    {% include timestamp.html %}
+  </a>
+
+  {% if post.image %}
+  <div class="post-media">
+    <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+  </div>
+  {% endif %}
+
+  {% if post.video_file %}
+  <div class="post-media">
+    <video controls preload="metadata" src="{{ post.video_file | relative_url }}"></video>
+  </div>
+  {% elsif post.video_embed %}
+    {% assign v = post.video_embed %}
+    <div class="post-media post-embed">
+      {% if v contains "youtu" %}
+        {% if v contains "youtu.be/" %}
+          {% assign yt_id = v | split: "youtu.be/" | last | split: "?" | first %}
+        {% else %}
+          {% assign yt_id = v | split: "v=" | last | split: "&" | first %}
+        {% endif %}
+        <iframe src="https://www.youtube.com/embed/{{ yt_id }}" loading="lazy" allowfullscreen></iframe>
+      {% elsif v contains "vimeo.com" %}
+        {% assign vm_id = v | split: "vimeo.com/" | last | split: "?" | first %}
+        <iframe src="https://player.vimeo.com/video/{{ vm_id }}" loading="lazy" allowfullscreen></iframe>
+      {% else %}
+        <a href="{{ v }}" target="_blank" rel="noopener">{{ v }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="post-body">
+    {{ post.content }}
+  </div>
+
+  {% if post.tags.size > 0 %}
+  <ul class="post-tags">
+    {% for tag in post.tags %}
+    <li><button type="button" class="tag" data-tag="{{ tag | downcase }}">{{ tag }}</button></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>

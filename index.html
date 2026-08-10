@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% assign all_tags = "" | split: "" %}
+{% for post in site.posts %}
+  {% for tag in post.tags %}
+    {% assign all_tags = all_tags | push: tag %}
+  {% endfor %}
+{% endfor %}
+{% assign unique_tags = all_tags | uniq | sort %}
+
+{% assign track_url = site.data.player.embed_url | default: "" %}
+
+{% if unique_tags.size > 0 or track_url != "" %}
+<div class="header-extra">
+  {% if unique_tags.size > 0 %}
+  <nav class="tag-filter" aria-label="Filtra per tag">
+    <button type="button" class="tag tag-all is-active" data-tag="__all__">tutti</button>
+    {% for tag in unique_tags %}
+    <button type="button" class="tag" data-tag="{{ tag | downcase }}">{{ tag }}</button>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {% include featured-track.html %}
+</div>
+{% endif %}
+
+<div class="wall">
+  {% for post in site.posts %}
+    {% include post.html post=post %}
+  {% endfor %}
+
+  {% if site.posts.size == 0 %}
+  <p class="empty">Ancora nessun contenuto qui.</p>
+  {% endif %}
+</div>
+
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}" defer></script>

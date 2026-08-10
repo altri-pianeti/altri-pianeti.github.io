@@ -1,0 +1,22 @@
+{% assign track = site.data.player %}
+{% if track and track.embed_url and track.embed_url != "" %}
+  {% assign u = track.embed_url %}
+  <div class="featured-track">
+    {% if track.title or track.artist %}
+    <p class="featured-track-label">
+      <span class="featured-track-note">&#9834;</span>
+      {% if track.title %}{{ track.title }}{% endif %}{% if track.title and track.artist %} — {% endif %}{% if track.artist %}{{ track.artist }}{% endif %}
+    </p>
+    {% endif %}
+    <div class="featured-track-embed">
+      {% if u contains "spotify.com" %}
+        {% assign sp_path = u | split: "open.spotify.com/" | last | split: "?" | first %}
+        <iframe src="https://open.spotify.com/embed/{{ sp_path }}" height="80" loading="lazy" allow="encrypted-media"></iframe>
+      {% elsif u contains "soundcloud.com" %}
+        <iframe src="https://w.soundcloud.com/player/?url={{ u | url_encode }}&color=%237b7a4c&visual=false&show_teaser=false" height="80" loading="lazy"></iframe>
+      {% else %}
+        <a href="{{ u }}" target="_blank" rel="noopener">{{ u }}</a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
