@@ -2,9 +2,11 @@
 
 ## Accedere
 
-1. Vai su `https://<il-tuo-sito>.github.io/admin`
+1. Vai su `https://altri-pianeti.github.io/admin`
 2. Clicca "Login with GitHub"
 3. Inserisci le tue credenziali GitHub (la prima volta soltanto)
+
+Funziona anche dal telefono, nel browser normale (Safari o Chrome — evita il browser interno di Instagram/WhatsApp, a volte blocca il login). Se il pulsante "Login with GitHub" sembra non fare nulla, controlla se è comparso un avviso "popup bloccato" in alto: tocca "consenti" e riprova. Per foto e video dal telefono, il campo del pannello propone direttamente di scattare o scegliere dalla galleria. Puoi anche aggiungere la pagina alla schermata Home (dal menu di condivisione del browser) per aprirla come un'app.
 
 ## Pubblicare qualcosa di nuovo
 
