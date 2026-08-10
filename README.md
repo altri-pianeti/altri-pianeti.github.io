@@ -1,9 +1,8 @@
 # Altri Pianeti
 
-Blog personale di Sara: un muro di contenuti in ordine cronologico inverso — testi, immagini, gif, video — con tag, senza sezione "About", con un'estetica anni '90. Sara pubblica da un pannello visuale, senza scrivere codice.
+Blog personale di Sara: un muro di contenuti in ordine cronologico inverso — testi, immagini, video. Sara pubblica da un pannello visuale, senza scrivere codice.
 
 - 🔗 **Sito pubblico:** https://altri-pianeti.github.io
-- ✏️ **Pannello di pubblicazione:** https://altri-pianeti.github.io/admin
 
 ## Come funziona
 
