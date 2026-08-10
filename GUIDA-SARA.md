@@ -15,7 +15,7 @@ Funziona anche dal telefono, nel browser normale (Safari o Chrome — evita il b
 3. Riempi solo i campi che ti servono per quel contenuto:
    - **Immagine o gif** → trascina il file
    - **Video** → trascina un file, oppure incolla un link YouTube/Vimeo
-4. Aggiungi dei **tag** se vuoi (scrivi la parola e premi invio)
+4. Aggiungi dei **tag** se vuoi: scrivi la parola, poi clicca su **"+ Add"** per aggiungerne un'altra (puoi ripeterlo quante volte vuoi, un tag per riga)
 5. La data e l'ora sono già impostate su adesso — puoi cambiarle se vuoi pubblicare con un orario diverso
 6. Clicca "Publish" in alto a destra
 

@@ -26,7 +26,7 @@ collections:
         pattern: ".+"
     fields:
       - { label: "Data e ora di pubblicazione", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z", picker_utc: false }
-      - { label: "Tag", name: "tags", widget: "list", default: [], required: false, hint: "Scrivi una parola e premi invio per aggiungerla" }
+      - { label: "Tag", name: "tags", widget: "list", default: [], required: false, hint: "Scrivi un tag, poi clicca su “+ Add” per aggiungerne un altro (uno per riga)" }
       - { label: "Testo", name: "body", widget: "markdown", required: false }
       - { label: "Immagine o gif", name: "image", widget: "image", required: false }
       - { label: "Video — carica un file", name: "video_file", widget: "file", required: false }

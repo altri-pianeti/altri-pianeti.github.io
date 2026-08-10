@@ -2,6 +2,7 @@ title: "Altri Pianeti"
 description: "diario per immagini, suoni e parole"
 url: "https://altri-pianeti.github.io"
 lang: it
+timezone: Europe/Rome
 
 # Permalink coerente con lo stile già usato su mariogaio.github.io
 permalink: /post/:year-:month-:day-:title/
