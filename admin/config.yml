@@ -17,6 +17,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
     format: "frontmatter"
+    identifier_field: "date"
+    summary: "{{date | date('DD/MM/YYYY HH:mm')}} — {{tags}}"
     sortable_fields: ["date"]
     view_filters:
       - label: "Con video"
