@@ -3,7 +3,13 @@
     {% include timestamp.html %}
   </a>
 
-  {% if post.image %}
+  {% if post.images and post.images.size > 0 %}
+  <div class="post-media post-gallery">
+    {% for img in post.images %}
+    <img src="{{ img.src | relative_url }}" alt="" loading="lazy">
+    {% endfor %}
+  </div>
+  {% elsif post.image %}
   <div class="post-media">
     <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
   </div>

@@ -29,7 +29,7 @@ collections:
       - { label: "Data e ora di pubblicazione", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z", picker_utc: false }
       - { label: "Tag", name: "tags", widget: "list", default: [], required: false, hint: "Scrivi i tag separati da virgola, es: poesia, estate, ricordi" }
       - { label: "Testo", name: "body", widget: "markdown", required: false }
-      - { label: "Immagine o gif", name: "image", widget: "image", required: false }
+      - { label: "Immagini", name: "images", widget: "list", required: false, hint: "JPEG, PNG o GIF — non HEIC. Scrivi la prima, poi clicca “+ Add Immagine” per aggiungerne altre", field: { label: "Immagine", name: "src", widget: "image" } }
       - { label: "Video — carica un file", name: "video_file", widget: "file", required: false }
       - { label: "Video — link (YouTube o Vimeo)", name: "video_embed", widget: "string", required: false }
 

@@ -146,6 +146,12 @@ main {
   filter: saturate(0.92) contrast(1.02);
 }
 
+.post-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
 .post-embed iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
