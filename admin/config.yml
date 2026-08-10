@@ -16,6 +16,8 @@ collections:
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    media_folder: "/assets/uploads/{{slug}}"
+    public_folder: "/assets/uploads/{{slug}}"
     format: "frontmatter"
     summary: "{{date | date('DD/MM/YYYY HH:mm')}} — {{tags}}"
     sortable_fields: ["date"]
