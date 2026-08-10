@@ -10,8 +10,14 @@
     {% endif %}
     <div class="featured-track-embed">
       {% if u contains "spotify.com" %}
-        {% assign sp_path = u | split: "open.spotify.com/" | last | split: "?" | first %}
-        <iframe src="https://open.spotify.com/embed/{{ sp_path }}" height="80" loading="lazy" allow="encrypted-media"></iframe>
+        {% assign sp_clean = u | split: "?" | first %}
+        {% assign sp_segments = sp_clean | split: "/" %}
+        {% assign sp_count = sp_segments.size %}
+        {% assign sp_id_index = sp_count | minus: 1 %}
+        {% assign sp_type_index = sp_count | minus: 2 %}
+        {% assign sp_id = sp_segments[sp_id_index] %}
+        {% assign sp_type = sp_segments[sp_type_index] %}
+        <iframe src="https://open.spotify.com/embed/{{ sp_type }}/{{ sp_id }}" height="80" loading="lazy" allow="encrypted-media"></iframe>
       {% elsif u contains "soundcloud.com" %}
         <iframe src="https://w.soundcloud.com/player/?url={{ u | url_encode }}&color=%237b7a4c&visual=false&show_teaser=false" height="80" loading="lazy"></iframe>
       {% else %}
