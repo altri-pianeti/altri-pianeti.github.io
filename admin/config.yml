@@ -1,11 +1,8 @@
-# --------------------------------------------------------------------------
-# base_url va completato quando il proxy OAuth (Cloudflare Worker) è online
-# --------------------------------------------------------------------------
 backend:
   name: github
   repo: altri-pianeti/altri-pianeti.github.io
   branch: main
-  base_url: https://TUO-PROXY-OAUTH.example.workers.dev
+  base_url: https://altri-pianeti-cms-auth.verdecchiasara997.workers.dev
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
