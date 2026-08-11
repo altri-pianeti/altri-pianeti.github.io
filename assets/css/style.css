@@ -149,7 +149,19 @@ main {
 .post-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.5rem;
+  gap: 0.5rem 0.5rem;
+  align-items: start;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
 }
 
 .post-embed iframe {

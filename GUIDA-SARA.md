@@ -13,7 +13,7 @@ Funziona anche dal telefono, nel browser normale (Safari o Chrome — evita il b
 1. Clicca "New Post"
 2. Scrivi il testo nel campo grande, se vuoi (puoi anche lasciarlo vuoto)
 3. Riempi solo i campi che ti servono per quel contenuto:
-   - **Immagini** → trascina la prima foto/gif, poi clicca su **"+ Add Immagine"** per aggiungerne altre (quante vuoi, compaiono affiancate). Devono essere JPEG, PNG o GIF — non HEIC: se sul telefono hai attivato il formato "immagini ad alta efficienza", disattivalo nelle impostazioni della fotocamera, altrimenti la foto non si vede su quasi nessun browser
+   - **Immagini** → trascina la prima foto/gif, poi clicca su **"+ Add Immagini"** per aggiungerne altre (quante vuoi, compaiono affiancate). Devono essere JPEG, PNG o GIF — non HEIC: se sul telefono hai attivato il formato "immagini ad alta efficienza", disattivalo nelle impostazioni della fotocamera, altrimenti la foto non si vede su quasi nessun browser. Ogni immagine ha anche un campo **"Didascalia"** facoltativo, che compare piccolo e in corsivo sotto la foto
    - **Video** → trascina un file, oppure incolla un link YouTube/Vimeo
 4. Aggiungi dei **tag** se vuoi, separati da virgola, tutti nello stesso campo (es. `poesia, estate, ricordi`)
 5. La data e l'ora sono già impostate su adesso — puoi cambiarle se vuoi pubblicare con un orario diverso
